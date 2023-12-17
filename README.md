@@ -5,202 +5,170 @@
 | **Kelas** | TI.22.A3 |
 | **Mata Kuliah** | Pemrograman Web |
 
----
+# <p align="center">Praktikum11 : PHP FRAMEWORK (CODEIGNITER)</p>
 
-## PERTEMUAN 12
+# Instruksi Praktikum
 
-## LAB 11 WEB
+1. Persiapkan text editor misalnya VSCode.
+   
+2. Buat folder baru dengan nama lab11_php_ci pada docroot webserver (htdocs)
+  
+3. Ikuti langkah-langkah praktikum yang akan dijelaskan berikutnya.
 
-## PRAKTIKUM 11
+# Langkah-langkah praktikum
 
-Dipertemuan kali ini kita akan mempelajari **PHP** **FRAMEWORK** **(CODEIGNITER)** dan juga bagaimana menggunakan nya dan mendownload nya.
-
-## LANGKAH - LANGKAH PRAKTIKUM
-
-### PERSIAPAN
 Sebelum memulai menggunakan Framework codeigniter, perlu dilakukan konfigurasi pada webserver. Beberapa ekstensi PHP perlu di aktifkan untuk kebutuhan pengembangan Codeigniter 4.
 
-
 Berikut beberapa ekstensi yang perlu diaktifkan:
-* **php-json** ekstension untuk bekerja dengan JSON;
-* **php-mysqlnd** native driver untuk MySQL
-* **php-xml** ekstension untuk bekerja dengan XML;
-* **php-intl** ekstensi untuk membuat aplikasi multibahasa;
-* **libcurl** (opsional), jika ingin pakai Curl.
 
-## 1). UNTUK MENGAKTIFKAN EKSTENSI TERSEBUT MELALUI **XAMPP CONTROL PANEL** PADA BAGIAN APACHE KLIK **CONFIG -> PHP.ini**
-![xampp](img/xampp.png)
+  -  php-json ekstension untuk bekerja dengan JSON;
+  -  php-mysqlnd native driver untuk MySQL
+  -  php-xml ekstension untuk bekerja dengan XML;
+  -  php-intl ekstensi untuk membuat aplikasi multibahasa;
+  -  libcurl (opsional), jika ingin pakai Curl.
 
-**PENJELASAN**
+## MEMBUAT FOLDER BARU
 
-Klik **PHP.ini**
+Pertama, buatlah folder baru dengan nama ```lab11_php_ci``` pada root directory web server(c:xampp/htdocs/Lab11Web)
 
-## 2). PADA BAGIAN EKSTENSION,HILANGKAN TANDA ; (titik koma) pada ekstensi yang akan diaktifkan. Kemudian simpan kembali filenya dan restart Apache web server.
-![aktifkan-extension](img/aktifkan-extension.png)
+Kemudian, sebelum memulai menggunakan Framework Codeigniter kita perlu melakukan konfigurasi dan juga mengaktifkan beberapa ekstentsi PHP seperti php-jose, php-mysqlnd, php-mxl, php-intl, dan libcurl.
 
-**PENJELASAN**
+## PENGAKTIFAN EKSTENSI DENGAN XAMPP CONTROL PANEL
 
-Aktifkan beberpa extension seperti contoh di atas
+Untuk dapat mengaktifkannya kalian perlu masuk kedalam control panel xampp kemudian pada bagian apache klik Config > ```PHP (php.ini)``` seperti gambar dibawah.
 
-## 3). KEMUDIAN BUAT FOLDER BARU DENGAN NAMA **lab11_php_ci**
-![folder-lab11_php_ci](img/folder-lab11-phpci.png)
+![Screenshot (568)](https://github.com/roswanda11/lab11web/assets/115516632/9d68971b-27a8-43ab-b6ac-e21931b10944)
 
-**PENJELASAN**
+Setelahnya cukup hilangkan tanda ; pada ekstentsi yang akan diaktifkan seperti gambar dibawah. Kemudian simpan kembali file tersebut dan restart Apache web servernya.
 
-Buat folder seperti diatas
+![Screenshot (569)](https://github.com/roswanda11/lab11web/assets/115516632/1fdebb0c-eca4-40c5-829a-fe03c4326ec2)
 
-## 4). INSTALASI CODEIGNITER 4
+## PENGINSTALLAN CODEIGNITER 4
 
-Untuk melakukan instalasi codeigniter 4 dapat dilakukan dengan dua cara , yaitu cara manual dan menggunakan ***composer***. pada praktikum ini kita menggunakan cara manual.
+Untuk melakukan instalasi codeigniter 4 dapat dilakukan dengan dua cara , yaitu cara manual dan menggunakan composer. pada praktikum ini kita menggunakan cara manual.
 
-* Unduh **Codeigniter** dari website https://codeigniter.com/download
-* Extrak file zip Codeigniter ke directori **htdocs/lab11_ci.**
-* Ubah nama direktory **framework-4.x.xx** menjadi **ci4**
-* Buka browser dengan alamat http://localhost/Lab11Web/lab11_php_ci/ci4/public/
+  -  Unduh Codeigniter dari website https://codeigniter.com/download
+  -  Extrak file zip Codeigniter ke directori htdocs/lab11_ci.
+  -  Ubah nama direktory framework-4.x.xx menjadi ci4
+  -  Buka browser dengan alamat http://localhost/Lab11Web/lab11_php_ci/ci4/public/
 
-![codeiginiter](img/codeigniter.png)
+![image](https://github.com/roswanda11/lab11web/assets/115516632/dce6c640-bbbe-40b6-beb6-f5c2a2201a96)
 
-**PENJELASAN**
+Pilih codeigniter 4 kemudian tekan download dan tunggu hingga terinstall.
 
-Codeigniter berhasil didownload dan disimpan file ekstrak nya
+## PROSES MENJALANKAN CLI (COMMAND LINE INTERFACE)
 
-## 5). MENJALANKAN CLI (***Command Line Interface***)
-Codeigniter 4 menyediakan CLI untuk mempermudah proses development. Untuk mengakses CLI buka terminal/command prompt.
+Codeigniter 4 menyediakan CLI untuk dapat mempermudah proses development. Untuk mengakses CLI bukalah terminal/command prompt. Kemudian arahkan lokasi direktori sesuai dengan direktori kerja project dibuat. (xampp/htdocs/Lab11Web/Lab11_php_ci/ci4)
 
- ![CLI](img/CLI.png)
+![Screenshot (572)](https://github.com/roswanda11/lab11web/assets/115516632/fcb87b6e-e614-4c82-89d9-10b684938acc)
 
- **PENJELASAN**
+Dan masukan perintah dibawah untuk dapat menjalankan guna memanggil CLI Codeigniter.
 
- Arahkan lokasi direktori sesuai dengan direktori kerja project dibuat (**C:\xampp\htdocs\Lab11Web\lab11_php_ci\ci4**)
-
- Perintah yang dapat dijalankan untuk memanggil CLI Codeigniter adalah
-```CLI
+```php
 php spark
 ```
-![php-spark-CLI](img/php-spark-CLI.png)
 
-**PENJELASAN**
+## PENGAKTIFAN MODE DEBUGGING
 
-php spark berhasil dipanggil
+Codeigniter 4 menyediakan fitur debugging untuk memudahkan developer untuk mengetahui pesan error apabila terjadi kesalahan dalam membuat kode program. Secara default fitur ini belum aktif. 
 
-## 6). MENGAKTIFKAN MODE DEBUGGING
-Codeigniter 4 menyediakan fitur **debugging** untuk memudahkan developer untuk mengetahui pesan erorr apabila terjadi kesalahan membuat kode program.
+Maka untuk mengaktifkannya, Pertama ubahlah file env menjadi .env . Kemudian ubah nilai konfigurasi pada environment variable CI_ENVIRONMENT menjadi development seperti gambar berikut.
 
-Secara default fitur ini belum aktif. Ketika terjadi erorr pada aplikasi akan ditampilkan pesan seperti berikut.
+![Screenshot (574)](https://github.com/roswanda11/lab11web/assets/115516632/aee275f6-9c22-4617-a33e-94a71b38457a)
 
-![erorr](img/erorr.png)
+Selanjutnya hilangkanlah ; pada akhir kode ketika kalian membuka file app/Controller/Home.php seperti berikut.
 
-**PENJELASAN**
+![Screenshot (575)](https://github.com/roswanda11/lab11web/assets/115516632/29f53499-8c64-4597-92a3-a4cbbd015651)
 
-Semua jenis erorr akan ditampilkan sama. Untuk memudahkan mengetahui jenis erorrnya, maka perlu diaktifkan mode debugging dengan mengubah nilai konfigurasi pada environment variable **CI_ENVIRONMENT** menjadi **development.**
+Dan terjadilah error pada aplikasi yang akan ditampilkan pesan kesalahan seperti berikut.
 
-![konfigurasi-ci](img/konfigurasi-CI.png)
+![menambahkan_gambar](img/TAMPILAN%20ERROR.png)
 
-**PENJELASAN**
 
-Ubah nama file **env** menjadi **.env** kemudian buka file tersebut dan ubah nilai variable **CI_ENVIRONMENT** menjadi **development.**
+## PEMBUATAN ROUTE BARU
 
-![parse-erorr](img/parse-erorr.png)
+Untuk menambahkan route baru cukup tambahkan kode berikut.
 
-**PENJELASAN**
-
-Contoh erorr yang terjadi. Untuk mencoba erorr tersebut, ubah kode pada file **app/Controller/Home.php** hilangkan titik koma pada akhir kode.
-
-![home.php](img/Home.php.png)
-
-dan akan erorr seperti gambar tampilan browser digambar sebelumnya.
-
-## 7). MEMBUAT ROUTE BARU
-Tambahkan kode berikut di dalam **Routes.php**
 ```php
 $routes->get('/about', 'Page::about');
 $routes->get('/contact', 'Page::contact');
 $routes->get('/faqs', 'Page::faqs');
 ```
-![route](img/route.png)
 
-**PENJELASAN**
+Kemudian buka CLI dan jalankan perintah tersebut. Jika mendapat tampilan seperti dibawah maka penambahan routes sudah benar.
 
-Untuk mengetahui route yang ditambahkan sudah benar, buka CLI dan jalankan perintah berikut.
+![menambahkan_gambar](img/CEK%20ROUTES.png)
 
-```CLI
-php spark routes
-```
-![php-spark-routes](img/cli-routes.png)
+Selanjutnya cobalah untuk mengakses route yang telah dibuat dengan mengakses alamat URL http://localhost:8080/about
 
-**PENJELASAN**
+![menambahkan_gambar](img/CEK%20WEB%20ROUTES.png)
 
-Selanjutnya coba akses route yang telah dibuat dengan mengakses alamat url: http://localhost:8080/about
+Jika mendapat tampilan seperti diatas, maka artinya file atau pages tersebut tidak ada. Dan untuk dapat mengakses halaman tersebut, harus dibuat terlebih dahulu Controller yang sesuai dengan routing yang dibuat yaitu Controller Page.
 
-![localhost-about](img/localhost-about.png)
+## MEMBUAT CONTROLLER
 
-**PENJELASAN**
+![menambahkan_gambar](img/MEMBUAT%20CONTROLLER.png)
 
-Ketika diakses akan muncul tampilan erorr 404 file not found, itu artinya file/page tersebut tidak ada. Untuk mengakses halaman tersebut, harus dibuat terlebih dahulu Controller yang sesuai dengan routing yang dibuat yaitu Controller Page.
-
-## 8). MEMBUAT CONTROLLER
-Selanjutnya adalah membuat Controller Page. Buat file dengan nama **page.php** pada direktori Controller kemudian isi kodenya seperti berikut.
-
-![about-page](img/about-page.png)
-
-**PENJELASAN**
-
-Refresh kembali browser,maka akan ditampilkan hasilnya seperti diatas,dan halaman sudah dapat di akses.
-
-
-## 9). AUTO ROUTING
-Secara default fitur *autoroute* pada Codeigniter sudah aktif. Untuk mengubah status autoroute dapat mengubah nilai variablenya. Untuk menonaktifkan ubah nilai **true** menjadi **false**
-
-![page-tos](img/page-tos.png)
-
-**PENJELASAN**
-
-Method ini belum ada pada **routing**, sehingga cara mengaksesnya dengan menggunakan alamat url: http://localhost:8080/page/tos/
-
-## 10). MEMBUAT VIEWS 
-Selanjutnya adalah membuat view untuk tampilan web agar lebih menarik. Buat file baru dengan nama **about.php** pada direktori view (**app/view/about.php**) kemudian isi kodenya seperti berikut.
+Selanjutnya adalah membuat Controller Page seperti diatas. Buat file baru dengan nama page.php pada direktori Controller kemudian isi kodenya seperti berikut.
 
 ```php
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title><?= $title; ?></title>
-</head>
-<body>
-    <h1><?= $title; ?></h1>
-    <hr>
-    <p><?= $content; ?></p>
-</body>
-</html>
+<?php
+
+namespace App\Controllers;
+
+class Page extends BaseController
+{
+    public function about()
+    {
+        echo "INI HALAMAN ABOUT";
+    }
+    public function contact()
+    {
+        echo "INI HALAMAN CONTACT";
+    }
+    public function faqs()
+    {
+        echo "INI HALAMAN FAQ";
+    }
+}
 ```
-![code-about](img/code-about.png)
 
-Ubah **method about** pada class **Controller Page** menjadi seperti berikut:
-![controller-page](img/controller.php.png)
+## AUTO ROUTING
 
-Maka hasil nya akan seperti ini dibrowser
+Secara default fitur autoroute pada Codeiginiter sudah aktif. Untuk mengubah status autoroutenya dapat diubah menggunakan nilai variabelnya. Dan ntuk menonaktifkannya ubah nilai true menjadi false.
 
-![view-about](img/view-about.png)
+```php
+$routes->setAutoRoute(true);
+```
 
-## 11). MEMBUAT LAYOUT WEB DENGAN CSS
-Pada dasarnya layout web dengan css dapat diimplementasikan dengan mudah pada codeigniter. Yang perlu diketahui adalah, pada Codeigniter 4 file yang menyimpan asset css dan javascript terletak pada direktori **public.**
+Tambahkan method baru pada Controller Page seperti berikut.
 
-Buat file css pada direktori **public** dengan nama **style.css** (copy file dari praktikum **lab4_layout**) Kita akan gunakan layout yang pernah dibuat pada praktikum 4.
+![menambahkan_gambar](img/AUTO%20ROUTING.png)
 
-![file-css](img/file-css.png)
+## MEMBUAT VIEW
 
-Kemudian buat folder **template** pada direktori **view** kemudian buat file **header.php** dan **footer.php**
+![menambahkan_gambar](img/BUAT%20VIEW.png)
 
-Seperti dibawah ini
+Selanjutnya adalah membuat view untuk tampilan web agar lebih menarik seperti diatas dengan membuat file baru dengan nama about.php pada direktori view (app/view/about.php) kemudian isi kodenya seperti berikut.
 
-![folder-template](img/folder-template.png)
+```php
+public function about()
+    {
+        return view('about', [
+            'title' => 'Halaman About',
+            'content' => 'Ini adalah halaman about yang menjelaskan tentang isi halaman ini.'
+        ]);
+    }
+```
 
-Dan tambahkan file didalam nya.
+## MEMBUAT LAYOUT WEB DENGAN CSS
 
-**header.php**
+Pada dasarnya layout web dengan css dapat diimplamentasikan dengan mudah pada codeigniter. Hanya saja yang perlu diketahui adalah, pada Codeigniter 4 file yang menyimpan asset css dan javascript terletak pada direktori public.
 
-```html
+Pertama, buatlah file css pada direktori public dengan nama style.css lalu buat juga folder pada direktori view yang didalamnya diisi dengan file header.php dan juga footer.php
+
+Isi bagian header dengan kode berikut.
+```php
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -219,41 +187,38 @@ Dan tambahkan file didalam nya.
         <a href="<?= base_url('/about');?>">About</a>
         <a href="<?= base_url('/contact');?>">Kontak</a>
     </nav>
-    <section id="wrapper">
-        <section id="main">
+<section id="wrapper">
+    <section id="main">
 ```
 
-**footer.php**
-
-```html
+Dan isi bagian footer dengan kode berikut.
+```php
 </section>
-            <aside id="sidebar">
-                <div class="widget-box">
-                    <h3 class="title">Widget Header</h3>
-                    <ul>
-                        <li><a href="#">Widget Link</a></li>
-                        <li><a href="#">Widget Link</a></li>
-                    </ul>
-                </div>
-                <div class="widget-box">
-                    <h3 class="title">Widget Text</h3>
-                    <p>Vestibulum lorem elit, iaculis in nisl volutpat, malesuada
-                    tincidunt arcu. Proin in leo fringilla, vestibulum mi porta, faucibus felis.
-                    Integer pharetra est nunc, nec pretium nunc pretium ac.</p>
-                </div>
-            </aside>
-        </section>
-    <footer>
-        <p>&copy; 2022 - Universitas Pelita Bangsa</p>
-    </footer>
-    </div>
+    <aside id="sidebar">
+        <div class="widget-box">
+            <h3 class="title">Widget Header</h3>
+            <ul>
+                <li><a href="#">Widget Link</a></li>
+                <li><a href="#">Widget Link</a></li>
+            </ul>
+        </div>
+        <div class="widget-box">
+            <h3 class="title">Widget Text</h3>
+            <p>Vestibulum lorem elit, iaculis in nisl volutpat, malesuada
+tincidunt arcu. Proin in leo fringilla, vestibulum mi porta, faucibus felis.
+Integer pharetra est nunc, nec pretium nunc pretium ac.</p>
+        </div>
+    </aside>
+</section>
+<footer>
+    <p>&copy; 2022 - Universitas Pelita Bangsa</p>
+</footer>
+</div>
 </body>
 </html>
 ```
 
-Kemudian ubah file **app/views/about.php** seperti berikut
-
-**about.php**
+Selanjutnya, ubahlah file about pada app view dengan kode berikut.
 
 ```php
 <?= $this->include('template/header'); ?>
@@ -265,105 +230,51 @@ Kemudian ubah file **app/views/about.php** seperti berikut
 <?= $this->include('template/footer'); ?>
 ```
 
-Kemudian refresh dan lihat kembali hasilnya pada browser
+Maka ketika halaman web tersebut kalian refresh, kalian akan mendapat tampilan seperti gambar dibawah ini.
 
-Maka tampilannya akan seperti berikut.
-
-![tampilan-about](img/tampilan-about.png)
-
--------------------------------------------------------------------------------------------------------------------------------------------
+![menambahkan_gambar](img/LAYOUT%20WEB.png)
 
 
-## PERTANYAAN DAN TUGAS 
-Lengkapi kode program untuk menu lainnya yang ada pada Controller Page, sehingga semua link pada navigasi header dapat menampilkan tampilan dengan layout yang sama.
+# PRAKTIKUM 12
 
-**Hasil**
+## MEMBUAT DATABASE : STUDI KASUS DATA ARTIKEL
 
-![halaman-about](img/halaman-about.png)
+Kalian bisa langsung saja membuat database pada PHPMyAdmin dengan mengklik tombol MySQL yang ada diatas kemudian masukan kode dibawah kemudian klik kirim.
 
-**PENJELASAN**
-
-Di atas adalah halaman About
-
-![halaman-contact](img/halaman-contact.png)
-
-**PENJELASAN**
-
-Buat file baru pada **views** dengan nama file **contact.php** dan juga ubah pada **Controller** dibagian file **page.php** dengan menambahkan **include footer/header**
-
-
-
----------------------------------------------------------------------------------------------------------------------------------------------
-
-
-|   HERLIYANSYAH        |       312010387       |
-|-----------------------|-----------------------|
-|   TI.20.A.2           |   PEMROGRAMAN WEB     |
-|   PERTEMUAN 13        |   PRAKTIKUM 12        |
-
-
-## PERTEMUAN 13
-
-## LAB 11 WEB (***MELANJUTKAN SEBELUMNYA***)
-
-## PRAKTIKUM 12 - FRAMEWORK LANJUTAN (CRUD)
-
-Dipertemuan kali ini kita akan melanjutkan tugas sebelum nya pada **praktikum 11** di **Lab11Web** dengan menggunakan **php framework** **CodeIgniter 4** Pertemuan kali ini kita akan mempelajari membuat (**CRUD**) pada Framework CI4.
-
-
-## LANGKAH - LANGKAH PRAKTIKUM
-
-## PERSIAPAN
-Untuk memulai membuat aplikasi CRUD sederhana, yang perlu dipersiapkan adalah database server menggunakan MySQL. pastikan MySQL server sudah dapat dijalankan melalui XAMPP.
-
-## 1). MEMBUAT DATABASE
-![create-database](img/create-database.png)
-
-**PENJELASAN**
-
-Membuat Database
-
-```mySQL
+```mysql
 CREATE DATABASE lab_ci4;
 ```
 
-## 2). MEMBUAT TABEL
-![create-table](img/create-table.png)
+![menambahkan_gambar](img/DATABASE%2012.png)
 
-```mySQL
+## PEMBUATAN TABEL 
+
+![menambahkan_gambar](img/MEMBUAT%20TABEL%2012.png)
+
+Setelah database berhasil dibuat. Selanjutnya proses pembuatan tabel pada database tersebut. Pembuatannya sama dengan sebelumnya, kalian hanya perlu menekan tombol MySQL pada Database sebelumnya kemudian masukan kode berikut:
+
+```mysql
 CREATE TABLE artikel (
-   id INT(11) auto_increment,
-   judul VARCHAR(200) NOT NULL,
-   isi TEXT,
-   gambar VARCHAR(200),
-   status TINYINT(1) DEFAULT 0,
-   slug VARCHAR(200),
-   PRIMARY KEY(id)
+    id INT(11) auto_increment,
+    judul VARCHAR(200) NOT NULL,
+    isi TEXT,
+    gambar VARCHAR(200),
+    status TINYINT(1) DEFAULT 0,
+    slug VARCHAR(200),
+    PRIMARY KEY(id)
 );
 ```
-**PENJELASAN** 
 
-Membuat tabel 
+## KONFIGURASI KONEKSI DATABASE
 
-![database-artikel](img/database-artikel.png)
+Konfigurasi dapat dilakukan dengan dua cara. Pertama, pada dua file app/config/database.php atau yang kedua menggunakan file .env seperti yang akan saya gunakan dengan menghapus tanda # pada bagian database seperti dibawah.
 
-Database berhasil dibuat
+![menambahkan_gambar](img/KONFIG%20KONEKSI%2012.png)
 
-## 3). KONFIGURASI KONEKSI DATABASE
-Konfigurasi dapat dilakukan dengan dua cara,yaitu pada file **app/config/database.php** atau menggunakan file **.env**. Pada praktikum ini kita gunakan konfigurasi pada file .env.
+## MEMBUAT MODEL
 
-![konfigurasi-database](img/konfigurasi-database.png)
+Pembuatan model dilakukan untuk memproses artikel nantinya. Untuk pembuatan modelnya cukup dengan membuat file baru pada direktori app/models dengan nama ArtikelModel.php kemudian isi dengan kode berikut.
 
-**PENJELASAN**
-
-Hapus tanda **#** pada bagian database seperti di atas di file **.env**
-
-## 4). MEMBUAT MODEL
-Selanjutnya membuat Model untuk memproses data Artikel. Buat file baru pada direktori **app/Models** dengan nama **ArtikelModel.php**
-
-![artikel-models](img/artikel-models.png)
-
-**code ArtikelModel**
 ```php
 <?php
 
@@ -373,19 +284,17 @@ use CodeIgniter\Model;
 
 class ArtikelModel extends Model
 {
-    protected $table = 'artikel';
+    protected $table = 'Artikel';
     protected $primaryKey = 'id';
     protected $useAutoIncrement = true;
-    protected $allowedFields = ['judul', 'isi', 'status', 'slug', 'gambar'];
+    protected $allowedFields = ['Judul', 'Isi', 'status', 'Slug', 'Gambar'];
 }
 ```
 
-## 5). MEMBUAT CONTROLLER
-Buat Controller baru dengan nama **Artikel.php** pada direktori **app/Controllers.**
+## MEMBUAT CONTROLLER
 
-![artikel-Controllers](img/artikel-controllers.png)
+Buatlah kontroller baru pada direktori app/Controllers dengan nama Artikel.php kemudian masukan kode berikut.
 
-**code Artikel.php**
 ```php
 <?php
 
@@ -395,6 +304,7 @@ use App\Models\ArtikelModel;
 
 class Artikel extends BaseController
 {
+
     public function index()
     {
         $title = 'Daftar Artikel';
@@ -405,11 +315,10 @@ class Artikel extends BaseController
 }
 ```
 
-## 6). MEMBUAT VIEW
-Buat direktori baru dengan nama **artikel** pada direktori **app/views,** kemudian buat file baru dengan nama **index.php.**
+## PEMBUATAN VIEW
 
+Buatlah direktori baru dengan nama artikel pada direktori app/views yang kemudian didalamnya buatlah file dengan nama index.php yang diisi dengan kode berikut:
 
-**code index.php**
 ```php
 <?= $this->include('template/header'); ?>
 
@@ -429,31 +338,27 @@ Buat direktori baru dengan nama **artikel** pada direktori **app/views,** kemudi
 <?= $this->include('template/footer'); ?>
 ```
 
-Kemudian Refresh kembali pada browser maka tampilannya akan seperti  gambar dibawah, belum ada data karena belum melakukan insert pada database. URL: http://localhost:8080/artikel
+Setelahnya refresh kembali browsernya dan kalian akan mendapatkan tampilan seperti gambar dibawah ini.
 
+![menambahkan_gambar](img/MEMBUAT%20VIEW%2012.png)
 
-![localhost-artikel](img/localhost-artikel.png)
+Tampilan diatas menampilkan bahwa belum satupun data yang ditampilkan, jadi cobalah tambahkan beberapa data pada database agar dapat ditampilkan datanya. Berikut kode yang digunakan:
 
-**PENJELASAN**
+```php
+INSERT INTO artikel (judul, isi, slug) VALUE
+('Artikel pertama', 'Lorem Ipsum adalah contoh teks atau dummy dalam industri percetakan dan penataan huruf atau typesetting. Lorem Ipsum telah menjadi standar contoh teks sejak tahun 1500an, saat seorang tukang cetak yang tidak dikenal mengambil sebuah kumpulan teks dan mengacaknya untuk menjadi sebuah
+buku contoh huruf.', 'artikel-pertama'), ('Artikel kedua', 'Tidak seperti anggapan banyak orang, Lorem Ipsum bukanlah
+teks-teks yang diacak. Ia berakar dari sebuah naskah sastra latin klasik dari era 45 sebelum masehi, hingga bisa dipastikan usianya telah mencapai lebih dari 2000 tahun.', 'artikel-kedua');
+```
 
-Belum ada data yang ditampilkan. Kemudian coba tambahkan beberapa data pada database agar dapat ditampilkan datanya.
+Refresh kembali browsernya dan akan menampilkan tampilan seperti ini.
 
-![insert](img/insert.png)
+![menambahkan_gambar](img/INSERT%20ARTIKEL%2012.png)
 
-**PENJELASAN**
+## MEMBUAT TAMPILAN DETAIL ARTIKEL
 
-Insert atau tambah data pada database dan tabel artikel kemudian refresh kembali pada browser dan tampilannya akan seperti gambar dibawah.
+Untuk membuat sebuah tampilan artikel yang mana ketika kita mengklik judul berita tersebut kita akan diarahkan kehalaman yang berbeda, cukup dengan menambahkan fungsi baru pada Controller Artikel dengan nama view(). Kemudian tambahkan kode berikut.
 
-![setelah-insert](img/setelah-insert.png)
-Tampilan Artikel
-
-
-## 7). MEMBUAT TAMPILAN DETAIL ARTIKEL
-Tampilan pada saat judul berita di klik maka akan diarahkan ke halaman yang berbeda. Tambahkan fungsi baru pada **Controller Artikel** dengan nama **view().**
-
-![code-artikel](img/code-artikel.png)
-
-**code view() pada artikel.php**
 ```php
 public function view($slug)
     {
@@ -470,12 +375,10 @@ public function view($slug)
     }
 ```
 
-## 8). MEMBUAT VIEW DETAIL
-Buat view baru untuk halaman detail dengan nama **app/views/artikel/detail.php**
+## MEMBUAT VIEW DETAIL
 
-![view-detail](img/view-detail.png)
+Buat view baru untuk halaman detail dengan nama app/views/artikel/detail.php kemudian memasukan kode berikut.
 
-**code detail.php**
 ```php
 <?= $this->include('template/header'); ?>
 
@@ -488,32 +391,22 @@ Buat view baru untuk halaman detail dengan nama **app/views/artikel/detail.php**
 <?= $this->include('template/footer'); ?>
 ```
 
-## 9). MEMBUAT ROUTING UNTUK ARTIKEL DETAIL
-Buka Kembali file **app/config/Routes.php** kemudian tambahkan routing untuk artikel detail.
+## MEMBUAT ROUTING UNTUK ARTIKEL DETAIL
 
-**code routing**
+Bukalah kembali file app/config/Routes.php kemudian tambahkan routing berikut untuk memunculkan artikel detail.
+
 ```php
 $routes->get('/artikel/(:any)', 'Artikel::view/$1');
 ```
 
-![routes-artikel](img/routing-artikel.png)
+Setelah ditambahkan cek browser dengan URL http://localhost:8080/artikel/artikel-pertama dan inilah hasilnya
 
-Kemudian refresh dan klik pada bagian link **Artikel pertama** atau pun **Artikel kedua**
+![menambahkan_gambar](img/ROUTING%2012.png)
 
-![artikel-pertama](img/artikel-pertama.png)
+## MEMBUAT MENU ADMIN
 
-Di atas adalah contoh Detail artikel pertama
+Menu admin ini berfungsi sebagai salah satu proses CRUD data artikel. Cara membuatnya cukup buatlah method baru pada Controller Artikel dengan nama admin_index() menggunakan kode berikut.
 
-![artikel-kedua](img/artikel-kedua.png)
-
-Di atas adalah contoh Detail artikel kedua
-
-## 10). MEMBUAT MENU ADMIN
-Menu admin adalah untuk proses CRUD data artikel. Buat method baru pada **Controller Artikel** dengan nama **admin_index().**
-
-![admin_index()](img/admin_index().png)
-
-**code admin_index()**
 ```php
 public function admin_index()
     {
@@ -524,11 +417,8 @@ public function admin_index()
     }
 ```
 
-* Selanjutnya buat view untuk tampilan admin dengan nama **admin_index.php**
+Selanjutnya buat view untuk dapat membuat tampilan admin dengan nama admin_index.php, kemudian masukan kode berikut
 
-![code-admin-index()](img/code-admin-index().png)
-
-**code admin_index.php**
 ```php
 <?= $this->include('template/admin_header'); ?>
 
@@ -538,7 +428,7 @@ public function admin_index()
             <th>ID</th>
             <th>Judul</th>
             <th>Status</th>
-            <th>Aksi</th>
+            <th>AKsi</th>
         </tr>
     </thead>
     <tbody>
@@ -551,8 +441,11 @@ public function admin_index()
         </td>
         <td><?= $row['status']; ?></td>
         <td>
-            <a class="btn" href="<?= base_url('/admin/artikel/edit/' .$row['id']);?>">Ubah</a>
-            <a class="btn btn-danger" onclick="return confirm('Yakin menghapus data?');" href="<?= base_url('/admin/artikel/delete/' .$row['id']);?>">Hapus</a>
+            <a class="btn" href="<?= base_url('/admin/artikel/edit/' .
+$row['id']);?>">Ubah</a>
+            <a class="btn btn-danger" onclick="return confirm('Yakin
+menghapus data?');" href="<?= base_url('/admin/artikel/delete/' .
+$row['id']);?>">Hapus</a>
         </td>
     </tr>
     <?php endforeach; else: ?>
@@ -566,7 +459,7 @@ public function admin_index()
             <th>ID</th>
             <th>Judul</th>
             <th>Status</th>
-            <th>Aksi</th>
+            <th>AKsi</th>
         </tr>
     </tfoot>
 </table>
@@ -574,76 +467,26 @@ public function admin_index()
 <?= $this->include('template/admin_footer'); ?>
 ```
 
-* Tambahkan routing untuk menu admin seperti berikut:
-![routes-admin](img/routes-admin.png)
+Kemudian tambahkanlah routing untuk menu admin seperti berikut
 
-**code routes admin**
 ```php
 $routes->group('admin', function($routes) {
     $routes->get('artikel', 'Artikel::admin_index');
     $routes->add('artikel/add', 'Artikel::add');
     $routes->add('artikel/edit/(:any)', 'Artikel::edit/$1');
     $routes->get('artikel/delete/(:any)', 'Artikel::delete/$1');
-  });
+});
 ```
 
-* Setelah itu buat **Template header** dan **footer** baru untuk **Halaman Admin**. Buat file baru dengan nama **admin_header.php** pada direktori **app/view/template**
+![menambahkan_gambar](img/ADMIN%2012.png)
 
-![admin-header](img/admin_header.png)
+Setelah ditambahkan akseslah menu admin untuk dapat melihat hasil seperti diatas dengan menggunakan URL http://localhost:8080/admin/artikel/
 
-**code admin_header.php**
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title><?= $title; ?></title>
-    <link rel="stylesheet" href="<?= base_url('/admin.css');?>">
-</head>
-<body>
-    <div id="container">
-    <header>
-        <h1>Admin Portal Berita</h1>
-    </header>
-    <nav>
-    <a href="<?= base_url('/admin/artikel');?>" class="active">Dashboard</a>
-        <a href="<?= base_url('/artikel');?>">Artikel</a>
-        <a href="<?= base_url('/admin/artikel/add');?>">Tambah Artikel</a>
-    </nav>
-    <section id="wrapper">
-        <section id="main">
-```
 
-* Dan buat file baru lagi dengan nama **admin_footer.php** pada direktori **app/views/template** 
+## MENAMBAHKAN DATA ARTIKEL
 
-![admin-footer](img/admin_footer.png)
+Untuk menambahkannnya cukup dengan tambahkan fungsi/method baru pada Controller Artikel dengan nama add() dengan kode sebagai berikut.
 
-**code admin_footer.php**
-```html
-<footer>
-        <p>&copy; 2022 - Universitas Pelita Bangsa</p>
-    </footer>
-    </div>
-</body>
-</html>
-```
-
-* Kemudian buat file baru lagi dengan nama **admin.css** pada direktori **ci4/public** untuk mempercantik tampilan **Halaman admin.**
-
-![admin-css](img/admin-css.png)
-
-* Akses menu admin dengan URL: http://localhost:8080/admin/artikel
-
-Maka tampilannya akan seperti gambar dibawah
-
-![admin-view](img/admin-view.png)
-
-## 11). MENAMBAHKAN DATA ARTIKEL
-Tambahkan fungsi/method baru pada **Controllers Artikel** dengan nama **add().**
-
-![function-add](img/function-add.png)
-
-**code function add**
 ```php
 public function add()
     {
@@ -651,27 +494,27 @@ public function add()
         $validation = \Config\Services::validation();
         $validation->setRules(['judul' => 'required']);
         $isDataValid = $validation->withRequest($this->request)->run();
-        
+
         if ($isDataValid)
         {
-            $artikel = new ArtikelModel();
-            $artikel->insert([
-                'judul' => $this->request->getPost('judul'),
-                'isi' => $this->request->getPost('isi'),
-                'slug' => url_title($this->request->getPost('judul')),]);
-            return redirect('admin/artikel');
+        $artikel = new ArtikelModel();
+        $artikel->insert([
+            'judul' => $this->request->getPost('judul'),
+            'isi' => $this->request->getPost('isi'),
+            'slug' => url_title($this->request->getPost('judul')),
+        ]);
+        return redirect('admin/artikel');
         }
         $title = "Tambah Artikel";
         return view('artikel/form_add', compact('title'));
     }
 ```
 
-* Kemudian buat view untuk form tambah dengan nama **form_add.php** 
+![menambahkan_gambar](img/FORM%20ADD%2012.png)
 
-![form-add](img/form_add.png)
+Kemudian buatlah view atau tampilan seperti diatas untuk form tambahan dengan nama form_add.php yang diisi dengan kode berikut.
 
-**code form_add.php**
-```html
+```php
 <?= $this->include('template/admin_header'); ?>
 
 <h2><?= $title; ?></h2>
@@ -688,31 +531,26 @@ public function add()
 <?= $this->include('template/admin_footer'); ?>
 ```
 
-* Kemudian klik menu **Tambah Artikel** dan tampilannya akan seperti gambar dibawah.
+## MENGUBAH DATA
 
-![tambah-artikel](img/tambah-artikel.png)
+Untuk mengubah data cukup dengan menambahkan fungsi/method baru pada Controller Artikel dengan nama edit() dengan kode berikut
 
-## 12). MENGUBAH DATA
-Tambahkan fungsi/method baru pada **Controllers Artikel** dengan nama **edit().**
-
-![function-edit](img/function-edit.png)
-
-**code function edit**
 ```php
 public function edit($id)
     {
         $artikel = new ArtikelModel();
-
+        
         // validasi data.
         $validation = \Config\Services::validation();
         $validation->setRules(['judul' => 'required']);
         $isDataValid = $validation->withRequest($this->request)->run();
-        
+
         if ($isDataValid)
         {
             $artikel->update($id, [
                 'judul' => $this->request->getPost('judul'),
-                'isi' => $this->request->getPost('isi'),]);
+                'isi' => $this->request->getPost('isi'),
+            ]);
             return redirect('admin/artikel');
         }
 
@@ -723,44 +561,32 @@ public function edit($id)
     }
 ```
 
-* Kemudian buat view untuk form tambah dengan nama **form_edit.php**
+![menambahkan_gambar](img/UBAH%20DATA%2012.png)
 
-![form-edit](img/form-edit.png)
+Kemudian buatlah tampilan seperti diatas untuk form tambah dengan nama form_edit.php yang diisi dengan kode berikut.
 
-**code form_edit.php**
-```html
+```php
 <?= $this->include('template/admin_header'); ?>
 
 <h2><?= $title; ?></h2>
 <form action="" method="post">
-    <p><input type="text" name="judul" value="<?= $data['judul'];?>" ></p>
-    <p><textarea name="isi" cols="50" rows="10"><?=$data['isi'];?></textarea></p>
+    <p>
+        <input type="text" name="judul" value="<?= $data['judul'];?>" >
+    </p>
+    <p>
+        <textarea name="isi" cols="50" rows="10"><?=
+$data['isi'];?></textarea>
+    </p>
     <p><input type="submit" value="Kirim" class="btn btn-large"></p>
 </form>
 
 <?= $this->include('template/admin_footer'); ?>
 ```
 
-* Kemudian klik **ubah** pada salah satu artikel 
+## MENGHAPUS DATA
 
-![edit-artikel1](img/edit-artikel1.png)
+Hapus data dengan menambahkan fungsi/method baru pada Controller Artikel dengan nama delete() dengan kode berikut.
 
-Di atas adalah contoh **ubah/edit** ***artikel pertama***
-
-Sementara dibawah adalah contoh **ubah/edit** ***artikel kedua*** 
-
-![edit-artikel2](img/edit-artikel2.png)
-
-## 13). MENGHAPUS DATA
-Tambahkan fungsi/method baru pada **Controllers Artikel** dengan nama **delete().**
-
-![function-delete()](img/function-delete.png)
-
-**PENJELASAN**
-
-Untuk hapus klik saja **hapus** maka artikel akan terhapus
-
-**code function delete**
 ```php
 public function delete($id)
     {
@@ -770,64 +596,35 @@ public function delete($id)
     }
 ```
 
-## PERTANYAAN DAN TUGAS
-* Selesaikan programnya sesuai Langkah-langkah yang ada. Anda boleh melakukan improvisasi.
+# PERTANYAAN DAN TUGAS
 
-* Sudah melakukan langkah-langkah sesuai intruksi dan melakukan improvisasi pada bagian admin artikel dengan menambah css dan view
-![admin-view](img/admin-view.png)
+Selesaikan programnya sesuai Langkah-langkah yang ada. Anda boleh melakukan improvisasi.
 
- -----------------------------------------------------------------------------------------------------------------------------------------
+![menambahkan_gambar](img/ADMIN%2012.png)
 
 
+# PRAKTIKUM 13
 
+## MEMBUAT TABEL : USER LOGIN
 
-|   HERLIYANSYAH      |     312010387       |
-|---------------------|---------------------|
-|   TI.20.A.2         |     PEMROGRAMAN WEB |
-|   PERTEMUAN 14      |     PRAKTIKUM 13    |
+![menambahkan_gambar](img/BUAT%20TABEL%2013.png)
 
+Kalian bisa langsung saja membuat sebuah tabel pada PHPMyAdmin dengan mengklik tombol MySQL yang ada diatas kemudian masukan kode dibawah kemudian klik kirim.
 
-## PERTEMUAN 14
-
-## LAB 11 WEB (***MELANJUTKAN SEBELUMNYA***)
-
-## PRAKTIKUM 13 - FRAMEWORK LANJUTAN (MODUL LOGIN)
-
-Dipertemuan kali ini kita masih melanjutkan tugas sebelumnya namun kita akan membuat sekaligus mempelajari bagaimana membuat **System Login** dengan module login dalam **Framework CodeIgniter 4** 
-
-## LANGKAH - LANGKAH PRAKTIKUM
-
-## PERSIAPAN
-Untuk memulai membuat modul login, yang perlu disiapkan adalah database server menggunakan MySQL. Pastikan MySQL server sudah dapat dijalankan melalui XAMPP.
-
-## MEMBUAT TABEL: USER LOGIN
-
-## 1). MEMBUAT TABEL USER
-Buat Tabel User pada Database **lab_ci4**
-
-![Table-user](img/tabel-user.png)
-
-**PENJELASAN**
-
-Table berhasil dibuat
-
-**Table user**
-```MySQL
+```mysql
 CREATE TABLE user (
-  id INT(11) auto_increment,
-  username VARCHAR(200) NOT NULL,
-  useremail VARCHAR(200),
-  userpassword VARCHAR(200),
-  PRIMARY KEY(id)
+    id INT(11) auto_increment,
+    username VARCHAR(200) NOT NULL,
+    useremail VARCHAR(200),
+    userpassword VARCHAR(200),
+    PRIMARY KEY(id)
 );
 ```
 
-## 2). MEMBUAT MODEL USER
-Selanjutnya adalah membuat Model untuk memproses data Login. Buat file baru pada direktori **app/Models** dengan nama **UserModel.php**
+## MEMBUAT MODEL USER
 
-![user-model](img/user-models.png)
+Selanjutnya buatlah model untuk memproses data login dengan membuat sebuah file baru pada direktori app/Models dengan nama UserModel.php yang diisi dengan kode berikut.
 
-**code UserModel.php**
 ```php
 <?php
 
@@ -844,14 +641,10 @@ class UserModel extends Model
 }
 ```
 
-## 3). MEMBUAT CONTROLLERS USER
-Buat Controllers baru dengan nama **User.php** pada direktori **app/Controllers.** Kemudian tambahkan method **index()** untuk menampilkan daftar user, dan method **login()** untuk proses login.
+## MEMBUAT CONTROLLER USER
 
-![function-index](img/function-index.png)
+Buatlah controller baru dengan nama User.php pada direktori app/Controllers. Kemudian tambahkan method index() untuk menampilkan daftar user dan method login() untuk proses login dengan memasukan kode berikut.
 
-![function-login](img/function-login.png)
-
-**code User.php**
 ```php
 <?php
 
@@ -887,19 +680,19 @@ class User extends BaseController
             $pass = $login['userpassword'];
             if (password_verify($password, $pass))
             {
-            $login_data = [
-                'user_id' => $login['id'],
-                'user_name' => $login['username'],
-                'user_email' => $login['useremail'],
-                'logged_in' => TRUE,
-            ];
-            $session->set($login_data);
-            return redirect('admin/artikel');
-        }
-        else
-        {
-            $session->setFlashdata("flash_msg", "Password salah.");
-            return redirect()->to('/user/login');
+                $login_data = [
+                    'user_id' => $login['id'],
+                    'user_name' => $login['username'],
+                    'user_email' => $login['useremail'],
+                    'logged_in' => TRUE,
+                ];
+                $session->set($login_data);
+                return redirect('admin/artikel');
+            }
+            else
+            {
+                $session->setFlashdata("flash_msg", "Password salah.");
+                return redirect()->to('/user/login');
             }
         }
         else
@@ -911,13 +704,11 @@ class User extends BaseController
 }
 ```
 
-## 4). MEMBUAT VIEW LOGIN
-Buat direktori baru dengan nama **user** pada direktori **app/views,** kemudian buat file baru dengan nama **login.php**
+## MEMBUAT VIEW LOGIN
 
-![login-user](img/login.png)
+Buatlah direktori baru dengan nama user pada direktori app/views, kemudian buatlah sebuah file baru dengan nama login.php menggunakan kode berikut.
 
-**code login.php**
-```html
+```php
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -929,37 +720,41 @@ Buat direktori baru dengan nama **user** pada direktori **app/views,** kemudian 
     <div id="login-wrapper">
         <h1>Sign In</h1>
         <?php if(session()->getFlashdata('flash_msg')):?>
-            <div class="alert alert-danger"><?=session()->getFlashdata('flash_msg') ?></div>
+            <div class="alert alert-danger"><?=
+session()->getFlashdata('flash_msg') ?></div>
         <?php endif;?>
         <form action="" method="post">
             <div class="mb-3">
-                <label for="InputForEmail" class="form-label">Email address</label>
-                <input type="email" name="email" class="form-control" id="InputForEmail" value="<?= set_value('email') ?>">
+                <label for="InputForEmail" class="form-label">Email
+address</label>
+                <input type="email" name="email" class="form-control"
+id="InputForEmail" value="<?= set_value('email') ?>">
             </div>
             <div class="mb-3">
-                <label for="InputForPassword" class="form-label">Password</label>
-                <input type="password" name="password" class="form-control" id="InputForPassword">
-            </div>
-            <button type="submit" class="btn btn-primary">Login</button>
-        </form>
+                <label for="InputForPassword"
+class="form-label">Password</label>
+                    <input type="password" name="password"
+class="form-control" id="InputForPassword">
+                </div>
+                <button type="submit" class="btn
+btn-primary">Login</button>
+            </form>
     </div>
 </body>
 </html>
 ```
 
-## 5). MEMBUAT DATABASE SEEDER
-Database seeder digunakan untuk membuat data dummy. Untuk keperluan ujicoba modul login, kita perlu memasukan data user dan password kedalam database. Untuk itu buat database seeder untuk tabel user. Buka CLI, kemudian tulis perintah berikut. 
+## MEMBUAT DATABASE SEEDER
 
-```CLI
+Database ini digunakan untuk membuat data dummy. Untuk mencobanya kita perlu memasukan data user dan password kedalam database. Untuk itu buatlah database seeder untuk tabel user. Bukalah CLI kemudia tulis perintah berikut.
+
+```
 php spark make:seeder UserSeeder
 ```
-![User-Seeder](img/spark-seeder.png)
+![menambahkan_gambar](img/DATABASE%20SEEDER%2013.png)
 
-Selanjutnya,buka file **UserSeeder.php** yang berada dilokasi direktori **/app/Database/Seeds/UserSeeder.php** kemudian isi dengan kode berikut:
+Selanjutnya, bukalah file UserSeeder.php yang berada pada direktori app/Database/Seeds/UserSeeder.php kemudian isi dengan kode berikut ini.
 
-![User-seeder](img/users-seeder.png)
-
-**code UserSeeder.php**
 ```php
 <?php
 
@@ -972,44 +767,30 @@ class UserSeeder extends Seeder
     public function run()
     {
         $model = model('UserModel');
-		$model->insert([
-            'username' => 'Herli',
-			'useremail' => 'herli27052000@gmail.com',
-			'userpassword' => password_hash('herli1234', PASSWORD_DEFAULT),
+        $model->insert([
+            'username' => 'admin',
+            'useremail' => 'admin@email.com',
+            'userpassword' => password_hash('admin123', PASSWORD_DEFAULT),
         ]);
     }
 }
 ```
 
-* Selanjutnya buka kembali CLI dan ketik perintah berikut:
+Selanjutnya buka kembali CLI dan ketikan perintah berikut.
 
-```CLI
+```
 php spark db:seed UserSeeder
 ```
-![db-userseeder](img/db-seeder.png)
 
-dan jalankan dibrowser,sebelum itu jangan lupa nyalahkan server nya dengan ketik pada CLI yaitu:
-```CLI
-php spark serve
-```
+Setelah menambahkan perintah tersebut bukalah browser untuk melakukan pengecekan dengan menggunakan URL http://localhost:8080/user/login seperti inilah tampilan yang dihasilkan.
 
-* Tambahkan CSS untuk mempercantik tampilan login. Buka file **style.css** pada direktori **ci4\public\style.css**
+![menambahkan_gambar](img/COBA%20AKSES%2013.png)
 
-![style-login](img/login-user.png)
 
-## UJI COBA LOGIN
-Selanjutnya buka url: http://localhost:8080/user/login
+## MENAMBAHKAN AUTH FILTER
 
-Maka tampilannya akan seperti gambar dibawah.
+Untuk halaman admin selanjutnya buatlah file baru dengan nama Auth.php pada direktori app/Filters. Kemudian tambahkan kode berikut ini.
 
-![ujicoba-login](img/ujicoba-login.png)
-
-## 6). MENAMBAHKAN AUTH FILTER
-Selanjutnya membuat filter untuk halaman admin. Buat file baru dengan nama **Auth.php** pada direktori **app/Filters.**
-
-![auth-filters](img/auth-filters.png)
-
-**code Auth.php**
 ```php
 <?php namespace App\Filters;
 
@@ -1028,193 +809,137 @@ class Auth implements FilterInterface
         }
     }
 
-    public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
+    public function after(RequestInterface $request, ResponseInterface
+$response, $arguments = null)
     {
         // Do something here
     }
 }
 ```
 
-* Selanjutnya buka file **app/Config/Filters.php** tambahkan kode berikut:
+Selanjutnya bukalah file app/config/Filters.php kemudian tambahkan kode berikut ke dalamnya.
 
 ```php
-'auth' => App\Filters\Auth::class,
+'auth' => App\Filters\Auth::class
 ```
-![auth-filtrescode](img/auth-class.png)
 
-* Selanjutnya buka file **app/Config/Routes.php** dan sesuaikan kodenya.
+Setelahnya buka file app/Config/Routes.php dan sesuaikanlah kodenya seperti gambar dibawah.
 
-![filters-auth](img/filters.png)
+![menambahkan_gambar](img/SESUAIKAN%20KODE%2013.png)
 
-## 7). FUNGSI LOGOUT
-Tambahkan method logout pada Controllers User seperti berikut
+## PERCOBAAN AKSES MENU ADMIN
 
-![function-logout](img/logout.png)
+Bukalah URL dengan alamat http://localhost:8080/user/login dan ketika alamat tersebut diakses maka akan muncul tampilan halaman login seperti berikut.
+
+![menambahkan_gambar](img/COBA%20AKSES%2013.png)
+
+Setelah mendapat tampilan diatas, loginlah menggunakan email adress dan password yang sudah disetting sebelumnya dan inilah tampilan yang dihasilkan ketika kalian sudah berhasil login.
+
+![menambahkan_gambar](img/ADMIN%2012.png)
+
+## FUNGSI LOGOUT
+
+Tambahkanlah method logout pada Controller User seperti berikut:
 
 ```php
-public function logout()
+    public function logout()
     {
         session()->destroy();
         return redirect()->to('/user/login');
     }
 ```
 
-* Tambahkan menu logout diheader admin. Ke direktori **app/views/template** lalu buka file **admin_header.php** tambahkan kode berikut.
+# PERTANYAAN DAN TUGAS
 
-![admin-logout](img/admin-logout.png)
+Selesaikan programnya sesuai Langkah-langkah yang ada. Anda boleh melakukan improvisasi.
 
-```html
-<a href="<?= base_url('/admin/logout');?>">Logout</a> 
-```
-
-* Dan Tambahkan route logout dengan cara ke direktori **app/Config/Routes.php** lalu tambahkan kode berikut.
-
-![routes-logout](img/filters.png)
-
-```php
-$routes->add('logout', 'User::logout');
-```
-
-## 8) PERCOBAAN AKSES MENU ADMIN
-Buka url http://localhost:8080/admin/artikel ketika alamat tersebut diakses maka, akan dimunculkan halaman login.
-
-![sign-in](img/sign.png)
-
-Setelah itu akan dibawa ke halaman seperti dibawah.
-
-![admin-artikel](img/admin-artikel.png)
-
---------------------------------------------------------------------------------------------------------------------------------
-
-## PERTANYAAN DAN TUGAS
-* Selesaikan programnya sesuai Langkah-langkah yang ada. Anda boleh melakukan improvisasi.
-
-* Sudah mengikuti dan menyelesaikan langkah-langkah yang ada dan melakukan improvisasi pada bagian **Tampilan Login** dengan menambahkan CSS 
-
-![tugas](img/ujicoba-login.png)
+![menambahkan_gambar](img/ADMIN%2012.png)
 
 
------------------------------------------------------------------------------------------------------------------------------------
+# PRAKTIKUM 14 
+# PAGINATION DAN PENCARIAN
 
-|  HERLIYANSYAH         |  312010387            |
-|-----------------------|-----------------------|
-|  TI.20.A.2            |  PEMROGRAMAN WEB      |
-|  PERTEMUAN 15         |  PRAKTIKUM 14         |
+## PEMBUATAN PAGINATION
 
+Pagination itu sendiri merupakan proses yang digunakan untuk membatasi tampilan yang panjang dari data yang banyak pada sebuah website. Fungsi pagination juga ialah memecah tampilan menjadi beberapa halaman tergantung banyaknya data yang akan ditampilkan pada setiap halaman yang mana fungsi tersebut sudah tersedia di dalam Library pada Codeigniter 4.
 
+Untuk dapat membuatnya, silahkan buka kembali Controller Artikel, kemudia modifikasilah kode pada method admin_index seperti berikut.
 
-## PERTEMUAN 15
-
-## LAB 11 WEB (***MELANJUTKAN SEBELUMNYA***)
-
-## PRAKTIKUM 14 - FRAMEWORK LANJUTAN (PAGINATION DAN PENCARIAN)
-
-Dipertemuan kali ini kita masih melanjutkan tugas sebelumnya namun kita akan membuat dan juga mempelajari membuat konsep dasar pagination dan pencarian dalam **framework Codeigniter 4**
-
-
-## LANGKAH - LANGKAH PRAKTIKUM
-Pagination merupakan proses yang digunakan untuk membatasi tampilan yang panjang dari data yang banyak pada sebuah website. Fungsi pagination adalah memecah tampilan menjadi beberapa halaman  tergantung banyak nya data yang akan ditampilkan pada setiap halaman.
-
-Pada **Codeigniter 4** fungsi pagination sudah tersedia pada library sehingga cukup mudah menggunakannya.
-
-## 1). MEMBUAT PAGINATION
-Untuk membuat pagination,buka Kembali **Controllers Artikel**, kemudian modifikasi kode pada method **admin_index** seperti berikut.
-
-![paginate](img/paginate.png)
-
-**code paginate**
 ```php
 public function admin_index()
     {
-         $title = 'Daftar Artikel';
-         $model = new ArtikelModel();
-         $data = [
-           'title' => $title,
-           'artikel' => $model->paginate(10), #data dibatasi 10 record perhalaman
-           'pager' => $model->pager,
-         ];
-         return view('artikel/admin_index', $data);
+        $title = 'Daftar Artikel';
+        $model = new ArtikelModel();
+        $data = [
+            'title' => $title,
+            'artikel' => $model->paginate(2), #data dibatasi 2 record per halaman
+            'pager' => $model->pager,
+        ];
+        return view('artikel/admin_index', $data);
     }
 ```
 
-* Kemudian buka file **views/artikel/admin_index.php** dan tambahkan kode berikut dibawah deklarasi tabel data.
-
-![pager-links](img/pagerlink.png)
+Kemudian bukalah file views/artikel/admin_index.php dan tambahkan kode dibawah ini.
 
 ```php
 <?= $pager->links(); ?>
 ```
 
-* Selanjutnya buka kembali menu daftar artikel, tambahkan data lagi untuk melihat hasilnya.
+Lalu tambahkanlah data baru dan buka kembalilah menu daftar artikel pada browser untuk melihat hasilnya.
 
-![page1](img/page1.png)
+![menambahkan_gambar](img/TAMBAH%20DATA%2014.png)
 
-Di atas adalah **page 1** sementara dibawah adalah **page 2** dimana saya meminta paginate min adalah 2 sementara data adalah 4
+![menambahkan_gambar](img/PAGINATION%2014.png)
 
-![page2](img/page2.png)
 
-* Sebelumnya tambahkan terlebih dahulu **CSS** di **public/admin.css** untuk mempercantik tampilan **pagination**
+## MEMBUAT PENCARIAN
 
-## 2). MEMBUAT PENCARIAN
-Pencarian data digunakan untuk memfilter data.
+Sebuah pencarian data yang digunakan untuk memfilter data yang dibuat dengan cara membuka kembali pada Controller Artikel, dan mengubah sebuah kode didalam admin_index menjadi seperti ini.
 
-* Untuk membuat pencarian data, buka kembali **Controllers Artikel,** pada method **admin_index** ubah kode nya seperti berikut
-
-![search](img/search.png)
-
-perubahan isi function
 ```php
 public function admin_index()
-    {
-	      $title = 'Daftar Artikel';
-	      $q = $this->request->getVar('q') ?? '';
-	      $model = new ArtikelModel();
-	      $data = [
-	           'title' => $title,
-	           'q' => $q,
-	           'artikel' => $model->like('judul', $q)->paginate(2), # data dibatasi 2 record per halaman
-	           'pager' => $model->pager,
-	         ];
-	      return view('artikel/admin_index', $data);
-    }
+{
+	 $title = 'Daftar Artikel';
+	 $q = $this->request->getVar('q') ?? '';
+	 $model = new ArtikelModel();
+	 $data = [
+	 'title' => $title,
+	 'q' => $q,
+	 'artikel' => $model->like('judul', $q)->paginate(2), # data dibatasi 2 record per halaman
+	 'pager' => $model->pager,
+	 ];
+	 return view('artikel/admin_index', $data);
+}
 ```
 
-* Kemudian buka kembali file **views/artikel/admin_index.php** dan tambahkan form pencarian sebelum deklarasi tabel seperti berikut:
+Kemudian buka kembali file views/artikel;/admin_index.php dan tambahkalan pencarian sebelum deklarasi tabel seperti berikut ini.
 
-![cari-data](img/cari-data.png)
-
-```html
+```php
 <form method="get" class="form-search">
    <input type="text" name="q" value="<?= $q; ?>" placeholder="Cari data">
    <input type="submit" value="Cari" class="btn btn-primary">
 </form>
 ```
 
-* Dan pada link pager ubah seperti berikut.
-![qlinks](img/qlinks.png)
+Dan ubahlah link pager menjadi seperti ini.
 
 ```php
 <?= $pager->only(['q'])->links(); ?>
 ```
 
-Selanjutnya ujicoba dengan membuka kembali halaman admin artikel, masukan kata kunci tertentu pada form pencarian.
+Maka seperti inilah tampilan yang dihasilkan.
 
-![pencarian](img/pencarian.png)
+![menambahkan_gambar](img/CARI%20DATA%2014.png)
 
-* Dan saya akan memasukan kata kunci untuk mencari artikel yang ingin saya cari dipencarian,gambar nya akan seperti dibawah.
 
-![pencarian2](img/pencarian2.png)
+## UPLOAD GAMBAR
 
-* Sebelum itu tambahkan CSS pada file **admin.css** untuk mempercantik bagian ***search***
+![menambahkan_gambar](img/MENAMBAHKAN%20GAMBAR%2014.png)
 
-## 3). UPLOAD GAMBAR
-Menambahkan fungsi unggah gambar pada tambah artikel. Buka kembali **Controllers Artikel**, sesuaikan kode pada method **add** seperti berikut:
+Untuk menambahkan fungsi upload gambar pada tambah artikel seperti diatas, bukalah kembali Controller Artikel dan sesuaikan kodenya pada method menjadi add menjadi seperti ini.
 
-![function](img/function.png)
-
-**perubahan code add**
 ```php
- public function add()
+public function add()
     {
         // validasi data.
         $validation = \Config\Services::validation();
@@ -1240,49 +965,26 @@ Menambahkan fungsi unggah gambar pada tambah artikel. Buka kembali **Controllers
     }
 ```
 
-* Kemudian pada file **views/artikel/form_add.php** tambahkan field input file seperti berikut.
+Kemudian tambahkan file input file seperti ini pada views/artikel/form_add.php
 
-![input-form](img/input-form.png)
-
-```html
-    <p>
+```php
+<p>
       <input type="file" name="gambar">
-    </p>
+ </p>
 ```
 
-* Dan sesuaikan tag form dengan menambahkan *ecrypt type* seperti berikut.
+Sesuaikan juga tag form dengan menambahkan sebuah ecrypt type seperti berikut.
 
-![input-form](img/input-form.png)
-
-```html
+```php
 <form action="" method="post" enctype="multipart/form-data">
 ```
 
-* Uji coba file upload dengan mengakses menu tambah artikel.
+# PERTANYAAN DAN TUGAS
 
-![upload-gambar](img/upload-gambar.png)
+Selesaikan programnya sesuai Langkah-langkah yang ada. Anda boleh melakukan
+improvisasi.
 
-**PENJELASAN**
-
-klik Choose file dan pilih gambar yang anda mau jika sudah dipilih,lalu tambahkan judul artikel dan juga deskripsi artikel,kemudian klik kirim maka artikel dan gambar nya akan terupload,sekian.
-
------------------------------------------------------------------------------------------------------------------------------------------
+![menambahkan_gambar](img/FINAL%2014.png)
 
 
-
-## PERTANYAAN DAN TUGAS
-Selesaikan programnya sesuai langkah-langkah yang ada. anda boleh melakukan improvisasi.
-
-* Saya sudah mengikuti langkah-langkah praktikum dan juga melakukan improvisasi pada bagian **pagination** dan **search**
-
-![page](img/page1.png)
-![searching](img/pencarian2.png)
-
----------------------------------------------------------------------------
-## TUGAS TERAKHIR PERTEMUAN 15
-## TERIMAKASIH UNTUK ILMU NYA
-## SELAMAT MENEMPUH UJIAN AKHIR SEMESTER (UAS) SEMESTER 4
-
-## TERIMAKASIH
-
-## @HERLIYANSYAH
+# <P align="center"> THANK'S FOR YOUR ATTENTION!! SEE YOU!!
